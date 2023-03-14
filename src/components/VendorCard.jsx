@@ -1,12 +1,16 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { generateImageUrl } from "../utils/helper/imageUrlGenerator.helper";
+import { motion } from "framer-motion";
 
 const VendorCard = ({ vendor }) => {
   return (
     <Link to="/vendor" state={{vendor: vendor._id}}>
-      <div className="shadow-xl max-w-xs pb-3 m-5 rounded-b-3xl">
-        <img src={`http://${vendor.profileImageUrl}`} alt="" className="rounded-b-3xl w-screen h-56 bg-cover" />
+      <motion.div
+       whileHover={{scale: 1.05}}
+       className="shadow-xl max-w-xs pb-3 m-5 rounded-b-3xl">
+        <img src={generateImageUrl(vendor.profileImageUrl)} alt="" className="rounded-b-3xl w-screen h-56 bg-cover" />
         <div className="flex flex-row justify-between items-center mx-3 my-3">
           <div className="flex flex-col">
             <h3 className="text-text1 font-bold text-lg">{vendor.name}</h3>
@@ -24,7 +28,7 @@ const VendorCard = ({ vendor }) => {
         <h4 className="text-text1 font-normal text-xs max-w-full leading-none line-clamp-2 m-3">
           {vendor.description}
         </h4>
-      </div>
+      </motion.div>
     </Link>
   );
 };

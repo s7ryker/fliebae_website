@@ -1,10 +1,13 @@
 import React from "react";
 import { BiCheckboxSquare } from "react-icons/bi";
+import { generateImageUrl } from "../utils/helper/imageUrlGenerator.helper";
+import { motion } from "framer-motion";
 
 const DishCard = ({ dish }) => {
+  console.log(generateImageUrl(dish.image), dish.image)
   return (
-    <div className="max-w-xs pb-3 m-5">
-      <img src={`http://${dish.image}`} alt=""  className="w-screen h-72 bg-cover"/>
+    <motion.div whileHover={{scale: 1.05}} className="max-w-xs pb-3 m-5">
+      <img src={generateImageUrl(dish.image)} alt=""  className="w-screen h-72 bg-cover"/>
       <div className="flex flex-row justify-between items-start mx-3 my-3">
         <div className="flex flex-col">
           <div className="flex flex-row items-center">
@@ -26,7 +29,7 @@ const DishCard = ({ dish }) => {
       <h4 className="text-text1 font-normal text-xs max-w-full leading-none line-clamp-2 m-3">
         {dish.description}
       </h4>
-    </div>
+    </motion.div>
   );
 };
 

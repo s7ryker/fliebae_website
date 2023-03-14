@@ -1,14 +1,14 @@
-FROM node:19-alpine3.16
+FROM nginx:latest
 
-WORKDIR /app
+#Copy SSL certificate
+COPY /etc/ssl/private/privkey.pem /etc/ssl/
+COPY /etc/ssl/private/cert.pem /etc/ssl/
 
-ENV PATH /app/node_modules/.bin:$PATH
+#Remove default nginx configuration
+RUN rm /etc/nginx/nginx.conf
+#Add new nginx configuration
+COPY nginx-tcp.conf /etc/nginx
 
-COPY package*.json ./
+EXPOSE 443
 
-RUN npm install --silent
-RUN npm install react-scripts@5.0.1 -g --silent
-
-COPY . ./
-
-CMD ["npm", "start"]
+CMD [ "nginx", "-g", "daemon off;" ]
