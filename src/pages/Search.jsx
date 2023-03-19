@@ -32,7 +32,7 @@ const Search = () => {
   return (
     <>
       <SearchBar handleSearchPattern={handleSearchPattern} />
-      <h1 className="text-text1 font-bold text-2xl ml-36">Search Results</h1>
+      <h1 className="text-text1 font-bold text-2xl ml-5 mt-5 md:mt-0 md:ml-36">Search Results</h1>
       <VendorsLists vendorList={filteredVendors} />
     </>
   );

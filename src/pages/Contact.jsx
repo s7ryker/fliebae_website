@@ -5,7 +5,7 @@ import { SiGmail } from "react-icons/si";
 
 const Contact = () => {
   return (
-    <div className="container mx-20 my-16">
+    <div className="container mx-5 md:mx-20 my-10 md:my-16">
       <h1 className="text-text1 font-bold text-2xl mb-5">Contact Us</h1>
 
       <div className="flex flex-col max-w-lg">

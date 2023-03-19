@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import ColossalMain from "./ColossalMain";
 import ColossalOthers from "./ColossalOthers";
 
+
 import dish1 from "../assets/images/dish1.png";
 import dish2 from "../assets/images/dish2.png";
 import dish3 from "../assets/images/dish3.png";
@@ -33,7 +34,7 @@ const HomeColossal = () => {
   }, [currentIndex]);
 
   return (
-    <div className="bg-primary h-screen px-5 py-10">
+    <div className="bg-primary min-h-[90vh] w-screen px-5 py-10 flex justify-center items-center">
       {colossals[currentIndex]}
     </div>
   );

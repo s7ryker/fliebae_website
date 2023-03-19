@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className="h-full bg-accent py-5 flex flex-col">
       <div className="flex flex-row">
-        <div className="flex flex-col items-start mx-20 my-5">
+        <div className="flex flex-col items-start ml-3 md:mx-20 my-5">
           <h3 className="text-text2 font-bold mb-5">HELP</h3>
           <Link to="/" className="text-text3">
             Home
@@ -24,9 +24,9 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="flex flex-col items-start mx-20 my-5">
+        <div className="flex flex-col items-end md:items-start mr-3 md:mx-20 my-5">
           <h3 className="text-text2 font-bold mb-5">GET IN TOUCH</h3>
-          <p className="text-text3 max-w-sm text-sm">
+          <p className="text-text3 w-3/4 md:max-w-sm text-sm text-right md:text-start">
             Any questions? Let us know in store at Wandoor Kerala, India, 679328
             or call us on +91 9778567367
           </p>

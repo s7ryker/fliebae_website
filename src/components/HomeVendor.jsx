@@ -14,7 +14,7 @@ const HomeVendor = () => {
   }, []);
   return (
     <>
-      <div className="flex flex-row justify-between items-center mt-16 mx-40">
+      <div className="flex flex-row justify-between items-center mt-16 mx-5 md:mx-40">
         <h1 className="text-text1 font-bold text-2xl">Resturants</h1>
         <Link to="/restaurants">
           <h4 className="text-text4 font-normal text-sm">View all...</h4>

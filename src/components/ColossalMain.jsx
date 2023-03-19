@@ -8,8 +8,8 @@ import { motion } from 'framer-motion';
 
 const ColossalMain = () => {
   return (
-    <div className="flex flex-row justify-evenly items-center">
-        <div className="">
+    <div className="flex flex-col justify-center items-center md:flex-row md:justify-between md:items-center w-screen">
+        <div className="md:ml-28">
           <motion.img
            initial={{x: -50, opacity: 0.5}}
            animate={{x: 0, opacity: 1}}
@@ -22,7 +22,7 @@ const ColossalMain = () => {
          initial={{opacity: 0}}
          animate={{opacity: 1}}
          transition={{duration: 1}}
-         className="items-start mt-10 w-2/5">
+         className="items-start mt-10 w-2/5 mr-20">
           <div className="flex flex-col">
             <h2
               className="font-bold text-text1 text-5xl text-start"

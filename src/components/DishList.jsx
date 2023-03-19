@@ -12,8 +12,8 @@ const DishList = ({vendorId}) => {
     getDishes();
   }, [vendorId]);
   return (
-    <div className="flex justify-center items-center my-10">
-      <div className="grid grid-cols-3">
+    <div className="flex justify-center items-center mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-3">
         {dishes.map((dish) => (
           <div key={dish._id}>
             <DishCard dish={dish} />
