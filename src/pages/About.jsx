@@ -1,5 +1,5 @@
 import React from "react";
-import about from '../assets/images/about.jpg'
+import about from '../assets/images/about1.jpg'
 
 const About = () => {
   return (
@@ -46,7 +46,7 @@ const About = () => {
             expanding our services in the future.
           </p>
         </div>
-        <img src={about} alt="" className="max-w-md max-h-96 m-5 md:m-0" />
+        <img src={about} alt="" className="max-w-lg max-h-full m-5 md:m-0" />
       </div>
     </div>
   );

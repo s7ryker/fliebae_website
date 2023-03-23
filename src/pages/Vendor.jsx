@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import DishList from "../components/DishList";
+import Loading from "../components/Loading";
 import { getRestaurantDetails } from "../services/apiFacade.service";
 import { generateImageUrl } from "../utils/helper/imageUrlGenerator.helper";
 
@@ -10,12 +11,15 @@ const Vendor = () => {
   const vendorId = location.state.vendor;
 
   const [vendor, setVendor] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     async function getRestaurant() {
       const result = await getRestaurantDetails(vendorId);
       setVendor(result);
     }
     getRestaurant();
+    setLoading(false);
   }, [vendorId]);
 
   return (
@@ -54,7 +58,11 @@ const Vendor = () => {
       </div>
 
       <h1 className="text-text1 font-bold text-2xl ml-5 mt-20 md:ml-36">Available Dishes</h1>
-      <DishList vendorId={vendorId} />
+      {
+        loading
+        ? <Loading />
+        : <DishList vendorId={vendorId} />
+      }
     </div>
   );
 };

@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import VendorsLists from "./VendorsLists";
 import { getRestaurantList } from "../services/apiFacade.service";
-
+import Loading from "./Loading";
 const HomeVendor = () => {
   const [vendors, setVendors] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     async function getRestaurants() {
       const result = await getRestaurantList();
       setVendors(result.slice(0, 6));
     }
     getRestaurants();
+    setLoading(false);
   }, []);
   return (
     <>
@@ -20,7 +23,7 @@ const HomeVendor = () => {
           <h4 className="text-text4 font-normal text-sm">View all...</h4>
         </Link>
       </div>
-      <VendorsLists vendorList={vendors} />
+      {loading ? <Loading /> : <VendorsLists vendorList={vendors} />}
     </>
   );
 };

@@ -26,7 +26,7 @@ const ColossalOtherDishes = ({ dish, title, content }) => {
             {content}
           </h2>
           <a href="https://play.google.com/store/apps/details?id=com.AzeTech.fliebae">
-            <div className="w-4/5 md:w-fit bg-red-600 rounded-3xl py-2 px-5 flex items-center mt-3 md:mx-5 hover:border-2 hover:border-slate-200 hover:bg-primary transition-opacity duration-200">
+            <div className="-full md:w-fit bg-red-600 rounded-3xl py-2 flex justify-center items-center mt-3 md:mx-5 hover:border-2 hover:border-slate-200 hover:bg-primary transition-opacity duration-200">
               <h3 className="mx-3 text-text2">Order Now</h3>
             </div>
           </a>
